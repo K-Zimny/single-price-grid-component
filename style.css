@@ -96,7 +96,8 @@ select {
   --fw-400: 400;
   --fw-700: 700;
 
-  --grid-container-padding: 3rem;
+  --grid-container-padding: 4rem;
+  --grid-container-padding-mobile: 2.6rem;
 }
 
 /* ---------------------------------- */
@@ -127,7 +128,9 @@ body {
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 @media (max-width: 800px) {
@@ -146,9 +149,10 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.35rem;
   margin-bottom: 1.5rem;
   color: var(--clr-cyan);
+  font-weight: var(--fw-700);
 }
 
 .top-fullspan .subheader {
@@ -161,6 +165,7 @@ h1 {
 .top-fullspan p {
   color: var(--clr-grayish-blue);
   font-size: 1.5rem;
+  line-height: 2.75rem;
 }
 
 /* bottom spans  */
@@ -182,12 +187,18 @@ h1 {
     border-radius: 0 0 1rem 1rem;
   }
 
+  .top-fullspan {
+    padding: var(--grid-container-padding-mobile);
+  }
+
   .bottom-halfspan {
     border-radius: 0;
+    padding: var(--grid-container-padding-mobile);
   }
 }
 
 h2 {
+  font-size: 1.75rem;
   margin-bottom: 1.5rem;
 }
 
@@ -200,6 +211,8 @@ h2 {
   font-size: 1.5rem;
   border-radius: 1rem;
   margin-top: 3rem;
+  color: var(--clr-white);
+  filter: drop-shadow(1px 1px 6px rgba(0, 0, 0, 0.25));
 }
 
 .bottom-halfspan p {
@@ -208,6 +221,9 @@ h2 {
 
 .bottom-halfspan .monthly {
   color: hsla(217, 20%, 82%, 0.712);
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .bottom-halfspan p .monthly-price {
@@ -229,5 +245,5 @@ h2 {
 }
 
 .bottom-halfspan:nth-child(3) p {
-  font-size: 1.25rem;
+  font-size: 1.4rem;
 }
